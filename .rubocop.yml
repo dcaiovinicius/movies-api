@@ -13,6 +13,7 @@ AllCops:
     - vendor/**/*
     - .pryrc
     - Rakefile
+    - .env
   DisplayStyleGuide: true
   ExtraDetails: true
   NewCops: enable
