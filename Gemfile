@@ -53,6 +53,9 @@ group :development, :test do
 
   # Performance optimization analysis for your projects, as an extension to RuboCop.
   gem 'rubocop-performance', require: false
+
+  # A Ruby gem to load environment variables from `.env`.
+  gem 'dotenv-rails'
 end
 
 group :development do
