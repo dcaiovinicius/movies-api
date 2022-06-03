@@ -56,6 +56,9 @@ group :development, :test do
 
   # A Ruby gem to load environment variables from `.env`.
   gem 'dotenv-rails'
+
+  # A library for setting up Ruby objects as test data.
+  gem 'factory_bot_rails'
 end
 
 group :development do
