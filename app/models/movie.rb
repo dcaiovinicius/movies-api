@@ -16,7 +16,7 @@ class Movie < ApplicationRecord
   private
 
   def set_published_at
-    self.published_at = DateTime.current
+    self.published_at = Date.current
   end
 
   def set_slug

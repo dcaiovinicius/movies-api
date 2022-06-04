@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_142820) do
     t.string "genre"
     t.string "country"
     t.string "year"
-    t.datetime "published_at"
+    t.date "published_at"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
