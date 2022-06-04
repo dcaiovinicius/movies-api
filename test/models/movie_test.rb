@@ -36,4 +36,11 @@ class MovieTest < ActiveSupport::TestCase
     @movie.save
     assert_includes @movie.errors[:slug], I18n.t('movie.registered_error')
   end
+
+  test 'should be a four-digit year' do
+    @movie.year = '21'
+    @movie.save
+
+    assert_includes @movie.errors[:year], I18n.t('movie.four-digit')
+  end
 end
