@@ -25,6 +25,13 @@ module Api
           post api_v1_catalogs_url, params: { movie: @movie }
         end
       end
+
+      test 'should update movie' do
+        patch api_v1_catalog_url(@movie_created), params: { movie: @movie }
+
+        assert_includes response.body, 'Update movie'
+        assert_response :ok
+      end
     end
   end
 end
