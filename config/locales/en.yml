@@ -30,4 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  movie:
+    registered_error: "This movie has already been registered"
+    four-digit: "Should be a four-digit year"
