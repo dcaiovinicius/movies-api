@@ -22,4 +22,18 @@ class MovieTest < ActiveSupport::TestCase
       assert_equal DateTime.current, @movie.published_at
     end
   end
+
+  test 'title must have a slug' do
+    @movie.save
+
+    assert_equal @movie.title.parameterize, @movie.slug
+  end
+
+  test 'should have only one valid slug' do
+    movie_created = create(:movie)
+    @movie.title = movie_created.title
+
+    @movie.save
+    assert_includes @movie.errors[:slug], I18n.t('movie.registered_error')
+  end
 end
