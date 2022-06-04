@@ -32,6 +32,15 @@ module Api
         assert_includes response.body, 'Update movie'
         assert_response :ok
       end
+
+      test 'should destroy movie' do
+        assert_difference('Movie.count', -1) do
+          delete api_v1_catalog_url(@movie_created)
+        end
+
+        assert_includes response.body, 'Deleted movie'
+        assert_response :ok
+      end
     end
   end
 end
