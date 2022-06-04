@@ -8,7 +8,7 @@ class Movie < ApplicationRecord
   validates :description, presence: true
 
   validates :year, presence: true, format: { with: /(19|20)\d{2}/i, message: I18n.t('movie.four-digit') }
-  validates :slug, presence: true, uniqueness: { scope: :title, message: I18n.t('movie.registered_error') }
+  validates :slug, presence: true, uniqueness: { message: I18n.t('movie.registered_error') }
 
   before_validation :set_published_at
   before_validation :set_slug
@@ -20,7 +20,7 @@ class Movie < ApplicationRecord
   end
 
   def set_slug
-    return slug if title.blank?
+    return nil if title.blank?
 
     self.slug = title.parameterize
   end
