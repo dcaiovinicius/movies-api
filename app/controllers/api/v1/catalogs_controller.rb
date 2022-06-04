@@ -5,9 +5,8 @@ module Api
     class CatalogsController < ApiController
       # GET /api/v1/movies
       def index
-        @movies = Movie.all
-
-        render json: @movies
+        @movies = Movies::Query.call(options: params)
+        render json: @movies, only: %i[title genre country year published_at]
       end
     end
   end
