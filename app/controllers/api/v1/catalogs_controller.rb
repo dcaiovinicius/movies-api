@@ -26,6 +26,25 @@ module Api
         end
       end
 
+      # PUT/PATCH /api/v1/catalogs/uuid
+      def update
+        @movie = Movie.find(params[:id])
+
+        if @movie.update(movie_params)
+          render json: { message: 'Update movie' }, status: :ok
+        else
+          render json: { status: 'ERROR', errors: @movie.errors }, status: :unprocessable_entity
+        end
+      end
+
+      # DELETE /api/v1/catalogs/uuid
+      def destroy
+        @movie = Movie.find(params[:id])
+
+        @movie.destroy
+        render json: { message: 'Deleted movie' }, status: :ok
+      end
+
       private
 
       def movie_params
