@@ -22,3 +22,7 @@ AllCops:
 Style/Documentation:
   Description: "Document classes and non-namespace modules."
   Enabled: false
+
+Style/RegexpLiteral:
+  Description: "Use `//` around regular expression. (https://rubystyle.guide#percent-r)"
+  Enabled: false
