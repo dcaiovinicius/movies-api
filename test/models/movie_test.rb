@@ -19,7 +19,7 @@ class MovieTest < ActiveSupport::TestCase
   test 'should be set to current date for published_at' do
     freeze_time do
       @movie.save
-      assert_equal DateTime.current, @movie.published_at
+      assert_equal Date.current, @movie.published_at
     end
   end
 

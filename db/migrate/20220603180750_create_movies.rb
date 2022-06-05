@@ -7,7 +7,7 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.string :genre
       t.string :country
       t.string :year
-      t.datetime :published_at
+      t.date :published_at
       t.text :description
 
       t.timestamps
