@@ -26,3 +26,7 @@ Style/Documentation:
 Style/RegexpLiteral:
   Description: "Use `//` around regular expression. (https://rubystyle.guide#percent-r)"
   Enabled: false
+
+Metrics/MethodLength:
+  Description: "Method has too many lines. [12/10]"
+  Enabled: false
