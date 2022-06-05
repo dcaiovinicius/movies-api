@@ -3,6 +3,8 @@
 module Api
   module V1
     class CatalogsController < ApiController
+      before_action :set_movie, only: %i[show update destroy]
+
       # GET /api/v1/catalogs
       def index
         @movies = Movies::Query.call(options: params)
@@ -11,7 +13,6 @@ module Api
 
       # GET /api/v1/catalogs/uuid
       def show
-        @movie = Movie.find(params[:id])
         render json: @movie, only: %i[id title genre country year published_at]
       end
 
@@ -28,8 +29,6 @@ module Api
 
       # PUT/PATCH /api/v1/catalogs/uuid
       def update
-        @movie = Movie.find(params[:id])
-
         if @movie.update(movie_params)
           render json: { message: 'Update movie' }, status: :ok
         else
@@ -39,13 +38,15 @@ module Api
 
       # DELETE /api/v1/catalogs/uuid
       def destroy
-        @movie = Movie.find(params[:id])
-
         @movie.destroy
         render json: { message: 'Deleted movie' }, status: :ok
       end
 
       private
+
+      def set_movie
+        @movie = Movie.find(params[:id])
+      end
 
       def movie_params
         params.require(:movie).permit(:title, :genre, :country, :year, :published_at, :description)
