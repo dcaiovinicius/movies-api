@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'csv'
+
 class Upload < ApplicationRecord
   has_one_attached :csv_file
 
