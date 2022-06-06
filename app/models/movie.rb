@@ -5,7 +5,7 @@ class Movie < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 200 }
   validates :genre, presence: true, length: { maximum: 20 }
-  validates :country, presence: true, length: { maximum: 20 }
+  validates :country, length: { maximum: 50 }
   validates :description, presence: true
 
   validates :year, format: { with: REGEX_YEAR, message: I18n.t('movie.four-digit') }
