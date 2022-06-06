@@ -1,0 +1,3 @@
+show_id,type,title,director,cast,country,date_added,release_year,rating,duration,listed_in,description
+s64,Movie,Mr. Robot,,"Dylan Minnette, Katherine Langford, Kate Walsh, Derek Luke, Brian d'Arcy James, Alisha Boe, Christian Navarro, Miles Heizer, Ross Butler, Devin Druid, Michele Selene Ang, Steven Silver, Amy Hargreaves",United States,"June 24, 2019",2019,TV-MA,4 Seasons,"Crime TV Shows, TV Dramas, TV Mysteries","Elliot, a cyber-security engineer suffering from anxiety, works for a corporation and hacks felons by night"
+s64,Movie,Blackhat,,,United States,"March 5, 2015",2015,,,,"Nick, a hacker, is released from jail when a code created by him is linked to a terrorist attack."
