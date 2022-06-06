@@ -24,6 +24,10 @@ Criar uma API de serviço do catálogo de filmes. Para isso será necessário cr
 Criar o arquivo `.env` de configuração do banco de dados.
 
 ```text
+# Rails
+RACK_ENV=development
+PORT=3000
+
 # Database
 
 # Development
@@ -33,10 +37,6 @@ DATABASE_DEVELOPMENT_URL="postgres://postgres:password@localhost:5432/Movies_dev
 # Test
 DATABASE_TEST_NAME="Movies_test"
 DATABASE_TEST_URL="postgres://postgres:password@localhost:5432/Movies_test"
-
-# Production
-DATABASE_PRODUCTION_NAME="Movies_production"
-DATABASE_PRODUCTION_URL="postgres://postgres:password@localhost:5432/Movies_production"
 ```
 
 Como instalar?
@@ -46,6 +46,8 @@ $ bundle install
 
 $ rails db:create
 $ rails db:migrate
+
+$ rails test
 
 $ rails server
 ```
@@ -114,5 +116,22 @@ $ curl -X DELETE http://localhost:3000/api/v1/catalogs/267a29a7-bd59-4a10-9a4c-6
 
 ```bash
 $ curl -X POST -H "Content-Type: multipart/form-data" -F csv_file=@test/fixtures/movies.csv http://localhost:3000/api/v1/uploads
-{"message":"File imported successfully"}
+```
+
+```json
+{ "message": "File imported successfully" }
+```
+
+## Heroku
+
+https://desolate-falls-60604.herokuapp.com/api/v1/catalogs
+
+Importar o arquivo para a API no heroku
+
+```bash
+$ curl -X POST -H "Content-Type: multipart/form-data" -F csv_file=@test/fixtures/netflix_titles.csv https://desolate-falls-60604.herokuapp.com/api/v1/uploads
+```
+
+```json
+{ "message": "File imported successfully" }
 ```
