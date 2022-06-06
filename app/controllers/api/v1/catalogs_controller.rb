@@ -8,12 +8,12 @@ module Api
       # GET /api/v1/catalogs
       def index
         @movies = Movies::Query.call(options: params)
-        render json: @movies, only: %i[id title genre country year published_at]
+        render json: @movies, only: %i[id title genre country year published_at description]
       end
 
       # GET /api/v1/catalogs/uuid
       def show
-        render json: @movie, only: %i[id title genre country year published_at]
+        render json: @movie, only: %i[id title genre country year published_at description]
       end
 
       # POST /api/v1/catalogs
